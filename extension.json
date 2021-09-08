@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "CategoryLockdown",
+	"version": "1.0",
+	"url": "https://www.mediawiki.org/wiki/Extension:CategoryLockdown",
+	"author": "[https://www.mediawiki.org/wiki/User:Sophivorus Sophivorus]",
+	"descriptionmsg": "categorylockdown-desc",
+	"license-name": "GPL-3.0-or-later",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	},
+	"MessagesDirs": {
+		"CategoryLockdown": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"CategoryLockdown": "CategoryLockdown.php"
+	},
+	"Hooks": {
+		"userCan": "CategoryLockdown::onUserCan"
+	}
+}
