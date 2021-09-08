@@ -27,7 +27,7 @@ class CategoryLockdown {
 		}
 
 		// Protect the category itself
-		if ( $title->getNamespace() === NS_CATEGORY && array_key_exists( $title->getText(), $wgCategoryLockdown ) && !in_array( $wgCategoryLockdown[ $title->getText() ], $groups )) {
+		if ( $title->getNamespace() === NS_CATEGORY && array_key_exists( $title->getText(), $wgCategoryLockdown ) && !in_array( $wgCategoryLockdown[ $title->getText() ], $groups ) ) {
 			return false;
 		}
 	}
