@@ -18,30 +18,33 @@ class CategoryLockdown {
 
 		$groups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user );
 
-		// Admins can view all
+		// Rules don't apply to admins
 		if ( in_array( 'sysop', $groups ) ) {
 			return;
 		}
 
-		// If the page is in a protected category and the user is not in the allowed group, hide the page
 		$categories = array_keys( $title->getParentCategories() );
 		if ( $title->getNamespace() === NS_CATEGORY ) {
-			$categories[] = $title->getFullText(); // Protect the category itself
+			$categories[] = $title->getFullText(); // Rules apply to the category itself
 		}
 		foreach ( $categories as $category ) {
 			$category = substr( $category, strpos( $category, ':' ) + 1 );
-			if ( array_key_exists( $category, $wgCategoryLockdown ) ) {
-				$allowedGroups = $wgCategoryLockdown[ $category ];
-				if ( is_string( $allowedGroups ) ) {
-					$allowedGroups = [ $allowedGroups ];
-				}
-				foreach ( $allowedGroups as $allowedGroup ) {
-					if ( in_array( $allowedGroup, $groups ) ) {
-						return;
-					}
-				}
-				return false;
+			if ( !array_key_exists( $category, $wgCategoryLockdown ) ) {
+				continue;
 			}
+			if ( !array_key_exists( $action, $wgCategoryLockdown[ $category ] ) ) {
+				continue;
+			}
+			$allowedGroups = $wgCategoryLockdown[ $category ][ $action ];
+			if ( is_string( $allowedGroups ) ) {
+				$allowedGroups = [ $allowedGroups ];
+			}
+			foreach ( $allowedGroups as $allowedGroup ) {
+				if ( in_array( $allowedGroup, $groups ) ) {
+					return;
+				}
+			}
+			return false;
 		}
 	}
 }

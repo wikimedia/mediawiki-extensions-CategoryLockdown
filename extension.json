@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "CategoryLockdown",
-	"version": "1.1",
+	"version": "2.0",
 	"url": "https://www.mediawiki.org/wiki/Extension:CategoryLockdown",
 	"author": "[https://www.mediawiki.org/wiki/User:Sophivorus Sophivorus]",
 	"descriptionmsg": "categorylockdown-desc",
@@ -17,6 +17,11 @@
 	},
 	"AutoloadClasses": {
 		"CategoryLockdown": "CategoryLockdown.php"
+	},
+	"config": {
+		"CategoryLockdown": {
+			"value": []
+		}
 	},
 	"Hooks": {
 		"userCan": "CategoryLockdown::onUserCan"
