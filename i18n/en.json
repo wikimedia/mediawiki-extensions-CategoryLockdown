@@ -4,5 +4,5 @@
 			"Sophivorus"
 		]
 	},
-	"categorylockdown-desc": "Restrict access to pages by category and group."
+	"categorylockdown-desc": "Restrict permissions by category and group."
 }
