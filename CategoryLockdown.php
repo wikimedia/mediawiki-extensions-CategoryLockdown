@@ -28,7 +28,9 @@ class CategoryLockdown {
 			$categories[] = $title->getFullText(); // Rules apply to the category itself
 		}
 		foreach ( $categories as $category ) {
+			// Normalize for comparison, from "Category:Top_secret" to "Top secret"
 			$category = substr( $category, strpos( $category, ':' ) + 1 );
+			$category = str_replace( '_', ' ', $category );
 			if ( !array_key_exists( $category, $wgCategoryLockdown ) ) {
 				continue;
 			}

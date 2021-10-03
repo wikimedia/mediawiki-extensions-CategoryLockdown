@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "CategoryLockdown",
-	"version": "2.0",
+	"version": "2.1",
 	"url": "https://www.mediawiki.org/wiki/Extension:CategoryLockdown",
 	"author": "[https://www.mediawiki.org/wiki/User:Sophivorus Sophivorus]",
 	"descriptionmsg": "categorylockdown-desc",
