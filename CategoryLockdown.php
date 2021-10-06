@@ -13,7 +13,7 @@ class CategoryLockdown {
 	 * @param string &$result
 	 * @return false|void
 	 */
-	public static function onUserCan( $title, $user, $action, &$result ) {
+	public static function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
 		global $wgCategoryLockdown;
 
 		$groups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user );
@@ -24,20 +24,28 @@ class CategoryLockdown {
 		}
 
 		$categories = array_keys( $title->getParentCategories() );
+
+		// Apply rules to the category page itself
 		if ( $title->getNamespace() === NS_CATEGORY ) {
-			$categories[] = $title->getFullText(); // Rules apply to the category itself
+			$categories[] = $title->getFullText();
 		}
+
 		foreach ( $categories as $category ) {
-			// Normalize for comparison, from "Category:Top_secret" to "Top secret"
+			// Normalize from "Category:Top_secret" to "Top secret" to compare
 			$category = substr( $category, strpos( $category, ':' ) + 1 );
 			$category = str_replace( '_', ' ', $category );
-			if ( !array_key_exists( $category, $wgCategoryLockdown ) ) {
+			$permissions = $wgCategoryLockdown[ $category ] ?? null;
+			if ( !$permissions ) {
+				$category_ = str_replace( ' ', '_', $category );
+				$permissions = $wgCategoryLockdown[ $category_ ] ?? null;
+			}
+			if ( !$permissions ) {
 				continue;
 			}
-			if ( !array_key_exists( $action, $wgCategoryLockdown[ $category ] ) ) {
+			$allowedGroups = $permissions[ $action ] ?? null;
+			if ( !$allowedGroups ) {
 				continue;
 			}
-			$allowedGroups = $wgCategoryLockdown[ $category ][ $action ];
 			if ( is_string( $allowedGroups ) ) {
 				$allowedGroups = [ $allowedGroups ];
 			}
@@ -46,6 +54,7 @@ class CategoryLockdown {
 					return;
 				}
 			}
+			$result = [ 'categorylockdown-error', implode( $allowedGroups, ', ' ) ];
 			return false;
 		}
 	}

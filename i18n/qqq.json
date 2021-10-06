@@ -4,5 +4,6 @@
 			"Sophivorus"
 		]
 	},
-	"categorylockdown-desc": "{{desc|name=CategoryLockdown|url=https://www.mediawiki.org/wiki/Extension:CategoryLockdown}}"
+	"categorylockdown-desc": "{{desc|name=CategoryLockdown|url=https://www.mediawiki.org/wiki/Extension:CategoryLockdown}}",
+	"categorylockdown-error": "Error message when a user isn't allowed to perform the requested action on the requested page."
 }

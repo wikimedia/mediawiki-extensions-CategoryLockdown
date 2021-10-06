@@ -4,5 +4,6 @@
 			"Sophivorus"
 		]
 	},
-	"categorylockdown-desc": "Restrict permissions by category and group."
+	"categorylockdown-desc": "Restrict permissions by category and group.",
+	"categorylockdown-error": "This action is restricted to the following user groups: $1"
 }
