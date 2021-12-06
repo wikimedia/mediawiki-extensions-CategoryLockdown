@@ -1,0 +1,7 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"categorylockdown-desc": "Schränkt die Berechtigungen nach Kategorie und Gruppe ein.",
+	"categorylockdown-error": "Diese Aktion ist auf die folgenden Benutzergruppen beschränkt: $1"
+}

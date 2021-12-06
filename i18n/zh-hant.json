@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"categorylockdown-desc": "依分類和群組來限制權限。",
+	"categorylockdown-error": "此操作僅限以下使用者群組：$1"
+}

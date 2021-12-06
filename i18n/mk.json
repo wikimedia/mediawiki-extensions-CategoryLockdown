@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"categorylockdown-desc": "Ограничување на дозволи по категорија и група.",
+	"categorylockdown-error": "Ова дејство е ограничено на следниве кориснички групи: $1"
+}

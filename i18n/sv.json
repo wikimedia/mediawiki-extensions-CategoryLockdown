@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sabelöga"
+		]
+	},
+	"categorylockdown-desc": "Begränsar behörigheter efter kategori och grupp.",
+	"categorylockdown-error": "Denna åtgärd är begränsad till följande användargrupper: $1"
+}
