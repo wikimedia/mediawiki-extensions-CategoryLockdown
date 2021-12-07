@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"categorylockdown-desc": "Restreindre les droits par catégorie et groupe.",
+	"categorylockdown-error": "Cette action est restreinte aux groupes utilisateur suivants : $1"
+}
