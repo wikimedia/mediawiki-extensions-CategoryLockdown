@@ -36,9 +36,10 @@ class CategoryLockdown {
 		foreach ( $categories as $category ) {
 			// Support "Category:Top_secret", "Category:Top secret", "Top_secret" and "Top secret"
 			$category = substr( $category, strpos( $category, ':' ) + 1 );
-			$permissions = $wgCategoryLockdown[ $category ] ?? null;
 			$category = str_replace( '_', ' ', $category );
+			$permissions = $wgCategoryLockdown[ $category ] ?? null;
 			if ( !$permissions ) {
+				$category = str_replace( ' ', '_', $category );
 				$permissions = $wgCategoryLockdown[ $category ] ?? null;
 			}
 			if ( !$permissions ) {
