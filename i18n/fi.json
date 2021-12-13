@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"MITO"
+		]
+	},
+	"categorylockdown-error": "Tämä toiminto on rajoitettu vain seuraaviin käyttäjäryhmiin: $1"
+}
