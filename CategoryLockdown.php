@@ -16,10 +16,12 @@ class CategoryLockdown {
 	public static function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
 		global $wgCategoryLockdown;
 
-		$groups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user );
+		$explicitGroups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user );
+		$implicitGroups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserImplicitGroups( $user );
+		$userGroups = $explicitGroups + $implicitGroups;
 
 		// Rules don't apply to admins
-		if ( in_array( 'sysop', $groups ) ) {
+		if ( in_array( 'sysop', $userGroups ) ) {
 			return;
 		}
 
@@ -30,14 +32,14 @@ class CategoryLockdown {
 			$categories[] = $title->getFullText();
 		}
 
+		$combinedGroups = [];
 		foreach ( $categories as $category ) {
-			// Normalize from "Category:Top_secret" to "Top secret" to compare
+			// Support "Category:Top_secret", "Category:Top secret", "Top_secret" and "Top secret"
 			$category = substr( $category, strpos( $category, ':' ) + 1 );
-			$category = str_replace( '_', ' ', $category );
 			$permissions = $wgCategoryLockdown[ $category ] ?? null;
+			$category = str_replace( '_', ' ', $category );
 			if ( !$permissions ) {
-				$category_ = str_replace( ' ', '_', $category );
-				$permissions = $wgCategoryLockdown[ $category_ ] ?? null;
+				$permissions = $wgCategoryLockdown[ $category ] ?? null;
 			}
 			if ( !$permissions ) {
 				continue;
@@ -50,11 +52,16 @@ class CategoryLockdown {
 				$allowedGroups = [ $allowedGroups ];
 			}
 			foreach ( $allowedGroups as $allowedGroup ) {
-				if ( in_array( $allowedGroup, $groups ) ) {
-					return;
+				$combinedGroups[] = $allowedGroup;
+			}
+		}
+		if ( $combinedGroups ) {
+			foreach ( $userGroups as $userGroup ) {
+				if ( in_array( $userGroup, $combinedGroups ) ) {
+					return true;
 				}
 			}
-			$result = [ 'categorylockdown-error', implode( $allowedGroups, ', ' ) ];
+			$result = [ 'categorylockdown-error', implode( ', ', $combinedGroups ) ];
 			return false;
 		}
 	}
