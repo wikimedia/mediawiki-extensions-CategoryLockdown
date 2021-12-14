@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lakejason0"
+		]
+	},
+	"categorylockdown-desc": "按分类和用户组限制权限。",
+	"categorylockdown-error": "此操作仅限于以下用户组：$1"
+}
