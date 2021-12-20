@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"MITO"
+			"MITO",
+			"Veikk0.ma"
 		]
 	},
+	"categorylockdown-desc": "Rajoita oikeuksia luokan ja käyttäjäryhmän mukaan.",
 	"categorylockdown-error": "Tämä toiminto on rajoitettu vain seuraaviin käyttäjäryhmiin: $1"
 }

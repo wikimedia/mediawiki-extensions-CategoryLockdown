@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"categorylockdown-desc": "Begrens tillatelser etter kategori og gruppe.",
+	"categorylockdown-error": "Denne handlingen er begrenset til følgende brukergrupper: $1"
+}
