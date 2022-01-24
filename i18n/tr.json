@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Can"
+		]
+	},
+	"categorylockdown-desc": "İzinleri kategoriye ve gruba göre kısıtla.",
+	"categorylockdown-error": "Bu eylem şu kullanıcı gruplarında kısıtlanmıştır: $1"
+}
