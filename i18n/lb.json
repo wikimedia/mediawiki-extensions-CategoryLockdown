@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"categorylockdown-desc": "Rechter no Kategorie a Grupp limitéieren.",
+	"categorylockdown-error": "Dës Aktioun ass limitéiert fir dës Benotzergruppen: $1"
+}
