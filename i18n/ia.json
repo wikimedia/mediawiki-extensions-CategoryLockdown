@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"categorylockdown-desc": "Restringer permissiones per categoria e gruppo.",
+	"categorylockdown-error": "Iste action es restringite al sequente gruppos de usatores: $1"
+}
