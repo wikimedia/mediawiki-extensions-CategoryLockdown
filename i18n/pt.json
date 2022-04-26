@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"categorylockdown-desc": "Restringir permissões por categoria e grupo.",
+	"categorylockdown-error": "Esta operação está restringida aos seguintes grupos de utilizadores: $1"
+}
