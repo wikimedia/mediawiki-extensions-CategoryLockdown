@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"categorylockdown-desc": "הגבלת הרשאות לפי קטגוריה וקבוצה.",
+	"categorylockdown-error": "הפעולה הזאת מוגבלת לקבוצות המשתמשים הבאות: $1"
+}
