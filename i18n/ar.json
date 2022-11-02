@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25"
+		]
+	},
+	"categorylockdown-desc": "تقييد الأذونات حسب الفئة والمجموعة.",
+	"categorylockdown-error": "يقتصر هذا الإجراء على مجموعات المستخدمين التالية: $1"
+}
