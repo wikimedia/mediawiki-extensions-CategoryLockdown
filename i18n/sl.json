@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"categorylockdown-desc": "Omeji dovoljenja po kategoriji in skupini.",
+	"categorylockdown-error": "To dejanje je omejeno na naslednje uporabniške skupine: $1"
+}
