@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robertgarrigos"
+		]
+	},
+	"categorylockdown-desc": "Restringeix permisos per categoria i grup.",
+	"categorylockdown-error": "Aquesta acció està restringida al següent grup d'usuaris: $1"
+}
