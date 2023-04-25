@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"categorylockdown-desc": "Apriboti leidimus pagal kategoriją ir grupę.",
+	"categorylockdown-error": "Šis veiksmas neleidžiamas šioms naudotojų grupėms: $1"
+}
