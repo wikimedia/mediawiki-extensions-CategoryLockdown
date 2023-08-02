@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"categorylockdown-desc": "Ograničite dopuštenja prema kategoriji i grupi.",
+	"categorylockdown-error": "Ova radnja je ograničena na sljedeće korisničke grupe: $1"
+}
