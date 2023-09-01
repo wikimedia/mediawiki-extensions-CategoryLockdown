@@ -59,11 +59,34 @@ class CategoryLockdown {
 		if ( $combinedGroups ) {
 			foreach ( $userGroups as $userGroup ) {
 				if ( in_array( $userGroup, $combinedGroups ) ) {
-					return true;
+					return;
 				}
 			}
 			$result = [ 'categorylockdown-error', implode( ', ', $combinedGroups ) ];
 			return false;
+		}
+	}
+
+	/**
+	 * API hook
+	 *
+	 * @todo This hook is rather hacky but should work well enough
+	 *
+	 * @param ApiBase $module
+	 * @param User $user
+	 * @param string &$message
+	 * @return false|void
+	 */
+	public static function onApiCheckCanExecute( $module, $user, &$message ) {
+		$params = $module->extractRequestParams();
+		$page = $params['page'] ?? null;
+		if ( $page ) {
+			$title = Title::newFromText( $page );
+			$action = $module->isWriteMode() ? 'edit' : 'read';
+			$allowed = self::onGetUserPermissionsErrors( $title, $user, $action, $result );
+			if ( $allowed === false ) {
+				$module->dieWithError( $result );
+			}
 		}
 	}
 }
