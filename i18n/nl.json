@@ -5,5 +5,5 @@
 		]
 	},
 	"categorylockdown-desc": "Machtigingen beperken per categorie en groep.",
-	"categorylockdown-error": "Deze actie is beperkt tot de volgende gebruikersgroepen: $1"
+	"categorylockdown-error": "Deze handeling is beperkt tot de volgende gebruikersgroepen: $1"
 }
