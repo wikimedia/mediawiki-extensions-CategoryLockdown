@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nulliscool"
+		]
+	},
+	"categorylockdown-desc": "Ограничить разрешения по категориям и группам.",
+	"categorylockdown-error": "Это действие доступно только следующим группам пользователей: $1"
+}
