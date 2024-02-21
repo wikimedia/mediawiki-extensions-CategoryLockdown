@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"categorylockdown-desc": "Restringe le permesse de le categorije e gruppe.",
+	"categorylockdown-error": "St'azione restringe a ste gruppe utinde: $1"
+}
