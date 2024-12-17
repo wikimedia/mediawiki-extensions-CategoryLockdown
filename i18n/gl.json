@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"categorylockdown-desc": "Restrinxir permisos por categoría e grupo.",
+	"categorylockdown-error": "Esta acción está restrinxida aos seguintes grupos de usuarios: $1"
+}
