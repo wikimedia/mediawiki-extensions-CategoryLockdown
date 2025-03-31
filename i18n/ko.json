@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tensama0415"
+		]
+	},
+	"categorylockdown-desc": "카테고리 및 그룹별로 권한을 제한합니다.",
+	"categorylockdown-error": "이 적업은 다음 사용자 그룹에만 제한되어 있습니다: $1"
+}
