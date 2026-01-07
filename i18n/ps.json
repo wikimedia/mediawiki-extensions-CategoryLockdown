@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"categorylockdown-desc": "د وېشنيزې او ډلې له مخې د اجازو محدودول.",
+	"categorylockdown-error": "دا چاره د لاندې کارن ډلو پورې محدوده ده: $1"
+}
