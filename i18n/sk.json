@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"categorylockdown-desc": "Obmedzuje oprávnenia podľa kategórie a skupiny.",
+	"categorylockdown-error": "Táto akcia je vyhradená pre nasledujúce používateľské skupiny: $1"
+}
