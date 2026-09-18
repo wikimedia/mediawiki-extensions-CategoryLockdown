@@ -19,7 +19,7 @@ class CategoryLockdown {
 
 		$explicitGroups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserGroups( $user );
 		$implicitGroups = MediaWikiServices::getInstance()->getUserGroupManager()->getUserImplicitGroups( $user );
-		$userGroups = $explicitGroups + $implicitGroups;
+		$userGroups = array_merge( $explicitGroups, $implicitGroups );
 
 		// Rules don't apply to admins
 		if ( in_array( 'sysop', $userGroups ) ) {
